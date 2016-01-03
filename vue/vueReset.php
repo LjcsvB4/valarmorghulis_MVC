@@ -1,0 +1,116 @@
+<?php require($_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_MVC/config/config.php');
+//if logged in redirect to members page
+if( $user->is_logged_in() ){ header('Location: vueMemberPage.php'); }
+//if form has been submitted process it
+if(isset($_POST['submit'])){
+	//email validation
+	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+	    $error[] = 'Veuillez entrer une adresse mail valide';
+	} else {
+		$stmt = $db->prepare('SELECT email FROM utilisateur WHERE email = :email');
+		$stmt->execute(array(':email' => $_POST['email']));
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		if(empty($row['email'])){
+			$error[] = 'L\'email fournie n\'est pas reconnu.';
+		}
+	}
+	//if no errors have been created carry on
+	if(!isset($error)){
+		//create the activasion code
+		$token = md5(uniqid(rand(),true));
+		try {
+			$stmt = $db->prepare("UPDATE utilisateur SET resetToken = :token, resetComplete='No' WHERE email = :email");
+			$stmt->execute(array(
+				':email' => $row['email'],
+				':token' => $token
+			));
+			//send email
+			$to = $row['email'];
+			$subject = "Password Reset";
+			$body = "Someone requested that the password be reset.
+			If this was a mistake, just ignore this email and nothing will happen.
+			To reset your password, visit the following address: <a href='".DIR."vue/vueResetPassword.php?key=$token'>".DIR."vue/vueResetPassword.php?key=$token</a>";
+
+
+			$mail->setFrom(SITEEMAIL);
+			$mail->addAddress($to);
+			$mail->Subject = $subject;
+			$mail->Body = $body;
+			$mail->send();
+	
+
+
+if(!$mail->send()) 
+{
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} 
+else 
+{
+    echo 'Message has been sent';
+echo "<a href='".DIR."vue/vueResetPassword.php?key=$token'>".DIR."vue/vueResetPassword.php?key=$token</a>";
+//header('Location: login.php?action=reset');
+//exit;
+}
+
+			
+		} catch(PDOException $e) {
+		    $error[] = $e->getMessage();
+		}
+	}
+}
+//define page title
+$title = 'Re-initialisation du compte';
+//include header template
+require('layout/header_vue.php');
+?>
+
+<div class="container">
+
+	<div class="row">
+
+	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+			<form role="form" method="post" action="" autocomplete="off">
+				<h2>Re-initialisation du mot de passe</h2>
+				<p><a class="LienFormulaire" href='vueConnexion.php'>Retour page de login</a></p>
+				<hr>
+
+				<?php
+				//check for any errors
+				if(isset($error)){
+					foreach($error as $error){
+						echo '<p class="bg-danger">'.$error.'</p>';
+					}
+				}
+				if(isset($_GET['action'])){
+					//check the action
+					switch ($_GET['action']) {
+						case 'active':
+							echo "<h2 class='bg-success'>Votre compte est active, vous pouvez vous connecter</h2>";
+							break;
+						case 'reset':
+							echo "<h2 class='bg-success'>Veuillez verifier votre boite mail pour le reset du mot de passe</h2>";
+							break;
+					}
+				}
+				?>
+
+				<div class="form-group">
+					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" value="" tabindex="1">
+				</div>
+
+				<hr>
+				<div class="row">
+					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Envoie lien de re-initialisation" class="btn btn-primary btn-block btn-lg" tabindex="2"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</div>
+
+<?php
+//include header template
+require('layout/footer_vue.php');
+?>

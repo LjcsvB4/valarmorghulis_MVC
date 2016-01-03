@@ -1,0 +1,208 @@
+.center
+{
+	margin:auto;
+	float:none;
+}
+aside{
+	background-color:transparent;
+	height: inherit;
+	margin: 0;
+	position : absolute;
+	left: 0px;
+	right: 65%;
+	box-shadow : 0px 0px 15px #871330;
+	display : block;
+	color:#B8860B;
+}
+a.bouton{
+	padding-left: 9px;
+	padding-right: 9px;
+	padding-top: 4px;
+	color: white;
+	border-style: groove;
+	border-width: 4px;
+	background-color: #B8860B; 
+	text-decoration: none;
+	padding-bottom: 5px;
+	border-radius: 15px;
+   box-shadow : 10px 10px 15px black;
+  }
+  
+.LienFormulaire
+{
+	font-size:25px;
+	
+
+}  
+.infoFormulaire
+{
+	color:white;
+	font-size:25px;
+}  
+body {
+	background-size:cover;	
+	background-image : url('images/telechargement.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 0% 100%;
+	margin:0 auto;
+
+	}
+	
+caption{
+	color: #4B0F12;
+	font-size: 140%;
+	font-weight: bolder;
+  		}
+	
+
+div.bouton{
+	min-width: 1520px;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	height: 120px;
+	margin: 0 auto;
+	
+	}
+	
+
+div.tout{
+	min-width: 1520px;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	height: 900px;
+	
+	}
+
+div.categ{
+	position: absolute;
+	background-color: transparent;
+	right: 0px;
+	left: 35%;
+}
+
+footer{
+ 	width: 100%;
+ 	background-color: black;
+	position: fixed;
+	left:0px;
+	right:0px; 
+	bottom:0px;	
+	text-align: center;
+	height: 10px;
+ 	padding: 12px;
+ 	color: whitesmoke;
+ 	font-size:20px;
+ }
+
+header {
+	width: 80%;
+	margin: 0 auto;	
+	}
+
+
+h1,h2 {
+	margin: 0 auto;
+	text-align : center;
+	font-size :  50px;
+	border-style : solid;
+	border-width : 0px;
+	font-family:cursive;
+	color:#B8860B;
+}
+h3{
+color: #B8860B;
+}
+
+
+ol.bgimg{
+	height : 300px;
+	background-image : url('images/ValarMorghulis.png');
+	background-repeat : no-repeat;
+	background-position : 50% 55%;
+	
+}
+
+label{
+	color: "#B8860B";
+	text-align: center;
+}
+
+ol.lecasting{
+background-color: transparent;
+color: #B8860B;
+}
+strong {
+	color: #B8860B;	
+	}
+
+<p>{
+	color:#B8860B; }	
+
+input{
+	color: #B8860B;	
+	}	
+	
+ol.laserie{
+	background-color :transparent;
+	color: #B8860B;
+}
+ol.lesite{
+	background-color : transparent;
+	color:#B8860B;
+}
+
+table{
+	background-color:transparent;
+	box-shadow: 8px 8px 12px #000;
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 10px;
+	text-align: center;
+	margin: 0 auto;
+  }
+
+
+
+  tr td{
+	border-style: solid;
+	border-width: 3px;
+	border-color:#323232;
+	color: #B8860B;
+	background-color:transparent;
+	text-align: center;
+	padding: 20px;
+  }
+
+  
+th{
+	border-style: solid;
+	border-width: 2px;
+	border-color:#323232 ;
+	background-color: transparent;
+	text-align: center;
+	font-weight: bolder;
+	color:  #B8860B;
+	padding: 20px;
+  }
+  
+ul.menu{
+	
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	
+}
+ul.menu li{
+	display: inline-block;
+}
+
+label{
+color: #B8860B;
+
+	}
+
+

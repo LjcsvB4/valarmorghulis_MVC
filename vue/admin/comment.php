@@ -1,0 +1,83 @@
+<?php
+//include config
+require_once($_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_MVC/config/config.php');
+//if not logged in redirect to login page
+if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
+//show message from add / edit page
+if(isset($_GET['delcomment'])){ 
+	$stmt = $db->prepare('DELETE FROM commentaire WHERE id = :id') ;
+	$stmt->execute(array(':id' => $_GET['delcomment']));
+	header('Location: comment.php?action=deleted');
+	exit;
+} 
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <link rel="stylesheet" href="../../style/normalize.css">
+  <link rel="stylesheet" href="../../style/main.css">
+  <script language="JavaScript" type="text/javascript">
+  function delpost(id, id_billet)
+  {
+	  if (confirm("Etes vous sur de vouloir supprimer '" + id_billet + "'"))
+	  {
+	  	window.location.href = 'comment.php?delcomment=' + id;
+	  }
+  }
+  </script>
+</head>
+<body>
+
+	<div id="wrapper">
+
+	<?php include('menu.php');?>
+
+	<?php 
+	//show message from add / edit page
+	if(isset($_GET['action'])){ 
+		echo '<h3>Post '.$_GET['action'].'.</h3>'; 
+	} 
+	?>
+
+	<table>
+	<tr>
+		<th>Id</th>
+		<th>Numero de billet</th>
+		<th>Auteur</th>
+		<th>Commentaire</th>
+		<th>Date</th>
+		<th>Action</th>
+	</tr>
+	<?php
+		try {
+			$stmt = $db->query('SELECT id, id_billet, auteur,commentaire,date_commentaire FROM commentaire ORDER BY id DESC');
+			while($row = $stmt->fetch()){
+				
+				echo '<tr>';
+				echo '<td>'.$row['id'].'</td>';
+				echo '<td>'.$row['id_billet'].'</td>';
+				echo '<td>'.$row['auteur'].'</td>';
+				echo '<td>'.$row['commentaire'].'</td>';		
+				echo '<td>'.date('jS M Y', strtotime($row['date_commentaire'])).'</td>';
+				?>
+
+				<td>
+					 
+					<a href="javascript:delpost('<?php echo $row['id'];?>','<?php echo $row['id_billet'];?>')">Delete</a>
+				</td>
+				
+				<?php 
+				echo '</tr>';
+			}
+		} catch(PDOException $e) {
+		    echo $e->getMessage();
+		}
+	?>
+	</table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+		
+		<div>
+		<table>
+	 			<caption>
+	 				<h3>Les Stark</h3>
+	 			</caption>
+				<thead>
+					<tr>
+					<th style="border-radius: 10 px 0 0 0">Personnages</th>
+					<th style="border-radius: 0 10px 0 0">Biographie</th>
+					</tr>
+				</thead>
+	 			<tbody>
+	 				<tr>
+	 				<th>
+	 					Eddard Stark <br/>
+							<img class="img_bio" src="../style/images/Ned.png" alt="Eddard_Stark" >
+					</th>
+	 				<td>
+							Eddard Stark, surnommé Ned, est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin. 
+							Il est le gouverneur du Nord et seigneur de Winterfell. 
+							Il est marié à lady Catelyn Tully, autrefois promise à son frère aîné, avec qui il a cinq enfants, Robb, Sansa, Arya, Bran et Rickon. 
+							Il a également un fils bâtard, Jon Snow. Il possède la légendaire épée en acier valyrien de la maison Stark, Glace.
+						   C'est un homme profondément juste et noble, mais également dur et austère.
+						   Il meurt la tete tranché par le bourreau du roi geffrey pour traitrise envers la couronne. 
+					</td>	
+					</tr>	
+					<tr>
+	 					<td>
+	 						Jon Snow <br/>
+	 						<img class="img_bio" src="../style/images/Jon.pnj.png" alt="Jon_Snow" >
+	 					</td>
+	 					<td>
+	 						Jon Snow est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin. 
+	 						Il est le fils illégitime né hors mariage (« bâtard ») de lord Eddard Stark et d'une femme inconnue. 
+	 						C'est un jeune garçon âgé de quatorze ans au début de la saga (dix-sept ans dans l'adaptation série) qui, 
+	 						comme la plupart des caractéristiques physiques des Stark, 
+	 						possède des cheveux noirs, le teint brun et des yeux d'un gris si sombre qu'on les dirait noirs, d'une carrure mince et gracieuse, 
+	 						il ressemble d'ailleurs bien plus à son père que ses demi-frères et demi-sœurs, au grand dam de la mère de ces derniers, 
+	 						lady Catelyn qui ne l'aime guère. 
+	 						Jon est accompagné d'un loup géant, un albinos du nom de Fantôme. 
+	 						Les circonstances de la naissance de Jon restent cependant entourées de mystère, ainsi que l'identité réelle de sa mère.
+	 					</td>
+	 				</tr>				
+	 				<tr>
+						<td>
+							Arya Stark <br/>
+							<img class="img_bio" src="../style/images/Arya.png" alt="Arya_Stark" >
+						</td>
+						<td>
+							Arya Stark est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin. 
+							Elle est la fille cadette de lord Eddard Stark et de lady Catelyn Tully. 
+							C'est une jeune fille d'une dizaine d'années qui préfère l'escrime et l'équitation à la couture. Elle ne s'entend donc pas bien avec sa sœur aînée Sansa, en revanche, 
+							elle est très proche de son demi-frère bâtard Jon Snow avec qui elle partage les traits des Stark. Son loup se nomme Nymeria.
+						</td>					
+					</tr>
+	 				<tr>
+						<td>
+							Sansa Stark <br/>
+							<img class="img_bio" src="../style/images/Sansa.png" alt="Sansa_Stark" >
+						</td>
+						<td>
+							Sansa Stark est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin. Elle est la fille aînée de lord Eddard Stark et de lady Catelyn Tully. 
+							C'est une jeune fille rêveuse et naïve, qui aime les joutes, les fêtes et les histoires de preux chevaliers et de princesses. 
+							Gracieuse et rêvant de chevalerie et du prince charmant des chansons, Sansa est belle, avec des cheveux auburn, des pommettes racées et des yeux d'un bleu profond, et alors qu'elle grandit acquiert une silhouette haute et élancée. 
+							Elle excelle dans de multiples disciplines, telles que coudre, chanter, jouer d'instruments de musiques, et les bonnes manières. 
+							Elle ne s'entend pas toujours avec sa sœur Arya dont les intérêts sont complètement opposés. Son loup se nomme Lady.
+						</td>					
+					</tr>
+					
+					<tr>
+						<td>
+							Catelyn Stark <br/>
+							<img class="img_bio" src="../style/images/Catelyn.png" alt="Cately_Stark" >
+						</td>
+						<td>
+							Catelyn Stark est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin. 
+							Elle est l'épouse de lord Eddard Stark avec qui elle a cinq enfants, Robb, Sansa, Arya, Bran et Rickon.
+							Elle meurt egorgée lors d'un repas avec son fils robb stark.
+						</td>					
+					</tr>
+					<tr>
+						<td>
+							Robb Stark<br/>
+							<img class="img_bio" src="../style/images/Robb.png" alt="">
+						</td>		
+						<td>
+					 est le fils ainé de lord Eddard Stark et de lady Catelyn Stark et est donc l'héritier de Winterfell et du Nord. 
+					 Il a quatorze ans au début des romans. Comme tous ses frères et sœurs, il possède un loup-garou, Vent Gris.
+					 Lorsque Ned Stark est appelé à Port-Réal pour devenir la Main du Roi, Robb reste à Winterfell pour diriger à la place de son père.
+					 Mais lorsque son père est exécuté sur ordre du roi Joffrey Baratheon, Robb part en campagne contre les Lannister.
+					 Après le couronnement successif de Renly, puis de Stannis Baratheon, Robb est proclamé Roi du Nord par ses vassaux,
+				  attirant à lui les bannières du Nord et du Conflans et entraînant la scission du royaume. Par ses talents stratégiques indéniables, 
+				 il remporte toutes ses batailles face aux Lannister. Pour s'assurer une alliance avec le sire des Jumeaux, qui tient le passage entre
+				  le nord et le sud de Westeros, Robb s'engage à épouser l'une des filles de lord Walder Frey. Cependant, il est blessé au cours d'une 
+				  bataille dans l'ouest et apprend alors la mort de ses frères cadets, Rickon et Bran. Cette nuit-là, il est « réconforté » par lady Jeyne
+					 Ouestrelin, jeune fille de haute naissance. Robb l'épouse alors pour lui éviter le déshonneur, rompant ainsi sa promesse envers les Frey. 
+					 Il présente ses excuses à Walder Frey pour n'avoir pas respecté sa promesse envers lui et celui-ci semble les accepter, au point de passer
+					 l'éponge à condition qu'Edmure Tully, oncle de Robb et frère de Catelyn Stark, épouse Roslin, une de ses filles. Mais lors de la nuit de
+					  noces, Robb est trahi et assassiné par son propre vassal, Roose Bolton, comme sa mère Catelyn l'est par les hommes de Walder Frey, lequel
+					   avait conclu un pacte secret avec les Lannister. Vent Gris est tué, dépecé et sa tête est cousue sur le corps de Robb. Cet épisode est 
+				  surnommé les noces pourpres. C'est l'acteur Richard Madden qui a été choisi pour incarner Robb Stark dans la série télévisée adaptée des romans,
+				   Le Trône de fer10. Il a 17 ans au lieu de 14 au début de la série.
+						</td>			
+					</tr>
+						<tr>
+						<th>
+						Bran Stark<br/>
+						<img class="img_bio"src="../style/images/Bran.png" alt="">					
+						</th>		
+	 				<td>
+	 				Brandon Stark, dit Bran est l'un des personnages principaux de la saga Le Trône de fer écrite par George R. R. Martin.
+	 				 Il est le fils cadet de lord Eddard Stark et de lady Catelyn Tully. 
+	 				C'est un enfant de sept ans, au début de la saga, qui rêve de devenir un jour un grand chevalier et d'intégrer la Garde Royale. 
+	 				Son loup se nomme Été.
+	 				
+	 				</td>
+	 				</tr>
+	 				</tbody>
+	 				</table>
+	 				
+	 				
+	 		
+	 				
+	 				
+
+	 		</div>
+		 			
+	
+		
