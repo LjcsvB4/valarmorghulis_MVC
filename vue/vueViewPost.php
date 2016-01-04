@@ -9,9 +9,9 @@ if($row['postID'] == ''){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Blog - <?php echo $row['postTitle'];?></title>
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="stylesheet" href="../style/main.css">
@@ -19,17 +19,17 @@ if($row['postID'] == ''){
 <body>
 
 	<div id="wrapper">
-<a href="vueLogout.php">Logout</a>
+<a href="vueLogout.php">Deconnexion</a>
 		<h1>Blog</h1>
 		<hr />
-		<p><a href="./vueMemberPage.php">Blog Index</a></p>
+		<p><a href="./vueMemberPage.php">Accueil</a></p>
 
 
 		<?php	
 
 			echo '<div>';
 				echo '<h1>'.$row['postTitle'].'</h1>';
-				echo '<p>Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
+				echo '<p>Soumit le '.date('jS M Y', strtotime($row['postDate'])).'</p>';
 				echo '<img src=../style/images/'.$row["postImage"].'>';
 				echo '<p>'.$row['postCont'].'</p>';				
 			echo '</div>';
@@ -46,8 +46,8 @@ $req->execute(array($_GET['id']));
 while ($donnees = $req->fetch())
 {
 ?>
-<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
-<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+<p><strong><?php echo htmlentities($donnees['auteur'], ENT_QUOTES, "UTF-8"); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
+<p><?php echo nl2br(htmlentities($donnees['commentaire'], ENT_QUOTES, "UTF-8")); ?></p>
 <?php
 } // Fin de la boucle des commentaires
 $req->closeCursor();
@@ -55,7 +55,7 @@ $req->closeCursor();
 	</div>
 
 
-<form action="../modele/modeleCommentaire_post.php" method="post">
+<form action="../modele/modeleCommentaire_post.php" method="post" accept-charset="utf-8">
 <p>
 <label for="commentaire">Commentaire</label> : 
 <textarea name="commentaire" id="commentaire" rows="4" cols="50">

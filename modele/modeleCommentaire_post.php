@@ -5,7 +5,7 @@ if(isset($_POST['commentaire']) && !empty($_POST['commentaire']))
 {
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=site_web', 'root', 'Pate63500');
+    $bdd = new PDO('mysql:host=localhost;dbname=site_web;charset=utf8', 'root', 'Pate63500');
 }
 catch(Exception $e)
 {

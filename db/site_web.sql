@@ -32,7 +32,7 @@ CREATE TABLE `blog_posts` (
   `postCont` text,
   `postDate` datetime DEFAULT NULL,
   PRIMARY KEY (`postID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=UTF8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `personnage` (
   `biographie` TEXT DEFAULT NULL,
   `nomImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idPersonnage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -20,11 +20,11 @@ else
 <?php
 if(isset($_GET['action']) && $_GET['action']=='joined')
 {
-	echo '<p><a class="LienFormulaire" href="vueConnexion.php">Login</a></p>';
+	echo '<p><a class="LienFormulaire" href="vueConnexion.php">Connexion</a></p>';
 }
 else
 {
-	echo '<p><a class="LienFormulaire" href="vue/vueConnexion.php">Login</a></p>';
+	echo '<p><a class="LienFormulaire" href="vue/vueConnexion.php">Connexion</a></p>';
 }
 ?>
 				

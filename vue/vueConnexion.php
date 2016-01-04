@@ -19,7 +19,7 @@ else
 
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="../modele/modeleConnexion.php" autocomplete="off">
-				<h2>Please Login</h2>
+				<h2>Veuillez vous connecter</h2>
 				<p><a class="LienFormulaire" href='../index.php'>Retour inscription</a></p>
 				<hr>
 
@@ -48,11 +48,11 @@ else
 				?>
 
 				<div class="form-group">
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" value="" tabindex="1">
+					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="Pseudo" value="" tabindex="1">
 				</div>
 
 				<div class="form-group">
-					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3">
+					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Mot de passe" tabindex="3">
 				</div>
 				
 				<div class="row">
@@ -63,7 +63,7 @@ else
 				
 				<hr>
 				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
+					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Connexion" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
 				</div>
 			</form>
 		</div>
