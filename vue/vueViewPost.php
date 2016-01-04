@@ -1,5 +1,5 @@
 <?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php'); 
-$stmt = $db->prepare('SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = :postID');
+$stmt = $db->prepare('SELECT postID, postTitle, postCont,postImage, postDate FROM blog_posts WHERE postID = :postID');
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
 //if post does not exists redirect user.
@@ -26,9 +26,11 @@ if($row['postID'] == ''){
 
 
 		<?php	
+
 			echo '<div>';
 				echo '<h1>'.$row['postTitle'].'</h1>';
 				echo '<p>Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
+				echo '<img src=../style/images/'.$row["postImage"].'>';
 				echo '<p>'.$row['postCont'].'</p>';				
 			echo '</div>';
 	
@@ -55,7 +57,10 @@ $req->closeCursor();
 
 <form action="../modele/modeleCommentaire_post.php" method="post">
 <p>
-<label for="commentaire">Commentaire</label> : <input type="text" name="commentaire" id="commentaire" /><br />
+<label for="commentaire">Commentaire</label> : 
+<textarea name="commentaire" id="commentaire" rows="4" cols="50">
+ 
+</textarea><br />
 <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'];?>">
 <input type="submit" value="Envoyer" />
 </p>

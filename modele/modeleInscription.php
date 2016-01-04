@@ -84,8 +84,7 @@ if(!$mail->send())
 } 
 else 
 {
-   /* echo 'Message has been sent';*/
-/*echo '<p><a href="http://localhost/valarmorghulis_1/activate.php?x='.$id.'&y='.$activation.'">activation compte</a></p>';*/
+
    header('Location: ../vue/vueInscription.php?action=joined');
     
 }
