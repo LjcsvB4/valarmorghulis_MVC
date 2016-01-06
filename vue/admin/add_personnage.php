@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_MVC/config/config.php');
 if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Admin - Add Post</title>
@@ -30,7 +30,7 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 	<?php include('menu.php');?>
 	<p><a href="./">Blog Admin Index</a></p>
 
-	<h2>Add Post</h2>
+	<h2>Ajout Personnage</h2>
 
 	<?php
 	//if form has been submitted process it
@@ -38,15 +38,19 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 		$_POST = array_map( 'stripslashes', $_POST );
 		//collect form data
 		extract($_POST);
+echo print_r($_POST);
 		//very basic validation
-		if($postTitle ==''){
-			$error[] = 'Please enter the title.';
+		if($nomPersonnage ==''){
+			$error[] = 'Veuillez entrer le nom du personnage.';
 		}
-		if($postDesc ==''){
-			$error[] = 'Please enter the description.';
+		if($prenomPersonnage ==''){
+			$error[] = 'Veuillez entrer le prenom du personnage.';
 		}
-		if($postCont ==''){
-			$error[] = 'Please enter the content.';
+		if($agePersonnage ==''){
+			$error[] = 'Veuillez entrer lage du personnage';
+		}
+		if($biographie ==''){
+			$error[] = 'Veuillez entrer la biographie';
 		}
 
 		if(!isset($error)){
@@ -62,29 +66,15 @@ $ext = strtolower( pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION) );
 $file=uniqid().'.'.$ext;
 move_uploaded_file($_FILES['image']['tmp_name'], $dir.$file);
 $photo = $file;
-/*$result = mysql_query("INSERT INTO testponi VALUES
-(
- '',
-'".mysql_real_escape_string($nom)."',
-'".mysql_real_escape_string($note)."',
-'".mysql_real_escape_string($photo)."'
-)
-");*/
-/*if (!$result) {
- die('RequÃªte invalide : ' . mysql_error());
-}*/
-
-				//insert into database
-				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postImage,postCont,postDate) VALUES (:postTitle, :postDesc,:postImage, :postCont, :postDate)') ;
+				$stmt = $db->prepare('INSERT INTO personnage (nomPersonnage,prenomPersonnage,age,biographie) VALUES (:nomPersonnage, :prenomPersonnage,:age, :biographie)') ;
 				$stmt->execute(array(
-					':postTitle' => $postTitle,
-					':postDesc' => $postDesc,
-					':postImage' => $photo,
-					':postCont' => $postCont,
-					':postDate' => date('Y-m-d H:i:s')
+					':nomPersonnage' => $nomPersonnage,
+					':prenomPersonnage' => $prenomPersonnage,
+					':age' => $agePersonnage,
+					':biographie' => $biographie
 				));
 				//redirect to index page
-				header('Location: vueAccueil.php?action=added');
+				header('Location: vuePersonnage.php?action=added');
 				exit;
 			} catch(PDOException $e) {
 			    echo $e->getMessage();
@@ -101,20 +91,24 @@ $photo = $file;
 
 	<form action='' method='post' enctype="multipart/form-data">
 
-		<p><label>Title</label><br />
-		<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
+		<p><label>Nom Personnage</label><br />
+		<input type='text' name='nomPersonnage' value='<?php if(isset($error)){ echo $_POST['nomPersonnage'];}?>'></p>
 
-		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+		<p><label>Prenom Personnage</label><br />
+		<input type='text' name='prenomPersonnage' value='<?php if(isset($error)){ echo $_POST['prenomPersonnage'];}?>'></p>
+		<p><label>Age</label><br />
+		<input type='text' name='agePersonnage' value='<?php if(isset($error)){ echo $_POST['agePersonnage'];}?>'></p>
 
-		<p><label>Content</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
-		<span><input id="nom" name="nom" type="text" maxlength="255" value="" /><label>Nom</label></span>
-		<label for="image"> Ajouter une photo</label>
+
+<p><label>Biographie</label><br />
+		<textarea name='biographie' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['biographie'];}?></textarea></p>
+
+
+<label for="image"> nom Image</label>
+<input type='text' name='nomImage' value='<?php if(isset($error)){ echo $_POST['nomImage'];}?>'></p>
  		<input type="hidden" name="MAX_FILE_SIZE" value="300000" >
  		<input type="file" id="file" name="image">
-
-		<p><input type='submit' name='submit' value='Submit'></p>
+		<p><input type='submit' name='submit' value='Valider'></p>
 
 	</form>
 

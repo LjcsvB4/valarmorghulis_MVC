@@ -1,7 +1,8 @@
-
+<?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php');?>
 <div>
 		<a href="vueMemberPage.php">Retour à la page d'accueil</a>
 		<a href="vueLogout.php">Deconnexion</a>
+<?php if($_SESSION['username']=='admin') { echo '<a href="admin/vueAccueil.php">Menu Admin</a>';}?>
 	</div>	
 		<a href="vueBioLannister.php" ><img src="../style/images/BlasonLannister.png" alt="Lannister"/></a>
 		

@@ -11,6 +11,7 @@
 </head>
 <body>
 <a href="vueLogout.php">Deconnexion</a>
+<?php if($_SESSION['username']=='admin') { echo '<a href="admin/vueAccueil.php">Menu Admin</a>';}?>
 	<div id="wrapper">
 
 		<h1>Blog</h1>

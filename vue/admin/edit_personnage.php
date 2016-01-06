@@ -4,10 +4,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_MVC/config/config.php');
 if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Admin - Edit Post</title>
+  <title>Admin - Modification Personnage</title>
   <link rel="stylesheet" href="../../style/normalize.css">
   <link rel="stylesheet" href="../../style/main.css">
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
@@ -30,7 +30,7 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 	<?php include('menu.php');?>
 	<p><a href="./">Blog Admin Index</a></p>
 
-	<h2>Edit Post</h2>
+	<h2>Modification Personnage</h2>
 
 
 	<?php
@@ -40,30 +40,31 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 		//collect form data
 		extract($_POST);
 		//very basic validation
-		if($postID ==''){
-			$error[] = 'This post is missing a valid id!.';
+		if($nomPersonnage ==''){
+			$error[] = 'Veuillez entrer le nom du personnage';
 		}
-		if($postTitle ==''){
-			$error[] = 'Please enter the title.';
+		if($prenomPersonnage ==''){
+			$error[] = 'Veuillez entrer le prenom du personnage';
 		}
-		if($postDesc ==''){
-			$error[] = 'Please enter the description.';
+		if($age ==''){
+			$error[] = 'Veuillez entrer lage du personnage';
 		}
-		if($postCont ==''){
-			$error[] = 'Please enter the content.';
+		if($biographie ==''){
+			$error[] = 'Veuillez entrer la biographpie du personnage';
 		}
 		if(!isset($error)){
 			try {
 				//insert into database
-				$stmt = $db->prepare('UPDATE blog_posts SET postTitle = :postTitle, postDesc = :postDesc, postCont = :postCont WHERE postID = :postID') ;
+				$stmt = $db->prepare('UPDATE personnage SET nomPersonnage = :nomPersonnage, prenomPersonnage = :prenomPersonnage,age = :age,biographie = :biographie WHERE idPersonnage = :idPersonnage') ;
 				$stmt->execute(array(
-					':postTitle' => $postTitle,
-					':postDesc' => $postDesc,
-					':postCont' => $postCont,
-					':postID' => $postID
+					':idPersonnage' => $_GET['id'],
+					':nomPersonnage' => $nomPersonnage,
+					':prenomPersonnage' => $prenomPersonnage,
+					':age' => $age,
+					':biographie' => $biographie
 				));
 				//redirect to index page
-				header('Location: vueAccueil.php?action=updated');
+				header('Location: vuePersonnage.php?action=updated');
 				exit;
 			} catch(PDOException $e) {
 			    echo $e->getMessage();
@@ -81,8 +82,8 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 		}
 	}
 		try {
-			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = :postID') ;
-			$stmt->execute(array(':postID' => $_GET['id']));
+			$stmt = $db->prepare('SELECT idPersonnage, nomPersonnage, prenomPersonnage, age,biographie FROM personnage WHERE idPersonnage = :idPersonnage') ;
+			$stmt->execute(array(':idPersonnage' => $_GET['id']));
 			$row = $stmt->fetch(); 
 		} catch(PDOException $e) {
 		    echo $e->getMessage();
@@ -90,18 +91,20 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 	?>
 
 	<form action='' method='post'>
-		<input type='hidden' name='postID' value='<?php echo $row['postID'];?>'>
+		<p><label>Nom Personnage : </label><br />
+		
+		<input type='text' name='nomPersonnage' value='<?php echo $row['nomPersonnage'];?>'>
 
-		<p><label>Title</label><br />
-		<input type='text' name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
+		<p><label>Prenom Personnage</label><br />
+		<input type='text' name='prenomPersonnage' value='<?php echo $row['prenomPersonnage'];?>'></p>
 
-		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
+		<p><label>Age</label><br />
+		<input type='text' name='age' value='<?php echo $row['age'];?>'></p>
 
-		<p><label>Content</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
+		<p><label>Biographie</label><br />
+		<textarea name='biographie' cols='60' rows='10'><?php echo $row['biographie'];?></textarea></p>
 
-		<p><input type='submit' name='submit' value='Update'></p>
+		<p><input type='submit' name='submit' value='Modification'></p>
 
 	</form>
 

@@ -16,7 +16,7 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 <div id="wrapper">
 
 	<?php include('menu.php');?>
-	<p><a href="users.php">User Admin Index</a></p>
+	<p><a href="users.php">Utilisateur Admin Index</a></p>
 
 	<h2>Edit User</h2>
 
@@ -28,22 +28,22 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 		extract($_POST);
 		//very basic validation
 		if($username ==''){
-			$error[] = 'Please enter the username.';
+			$error[] = 'Veuillez entrer le pseudo de lutilisateur';
 		}
 		if( strlen($password) > 0){
 			if($password ==''){
-				$error[] = 'Please enter the password.';
+				$error[] = 'Veuillez entrer le mot de passe';
 			}
 			if($passwordConfirm ==''){
-				$error[] = 'Please confirm the password.';
+				$error[] = 'Veuillez entrer le mot de passe de confirmation';
 			}
 			if($password != $passwordConfirm){
-				$error[] = 'Passwords do not match.';
+				$error[] = 'Les deux mot de passe ne concordent pas';
 			}
 		}
 		
 		if($email ==''){
-			$error[] = 'Please enter the email address.';
+			$error[] = 'Veuillez entrer un email';
 		}
 		if(!isset($error)){
 			try {
@@ -109,7 +109,7 @@ if(!$user->is_logged_in()){ header('Location: ../vueConnexion.php'); }
 		<p><label>Email</label><br />
 		<input type='text' name='email' value='<?php echo $row['email'];?>'></p>
 
-		<p><input type='submit' name='submit' value='Update User'></p>
+		<p><input type='submit' name='submit' value='Modifier utilisateur'></p>
 
 	</form>
 

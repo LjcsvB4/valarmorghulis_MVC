@@ -80,6 +80,7 @@ DROP TABLE IF EXISTS `personnage`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `personnage` (
   `idPersonnage` int(11) NOT NULL,
+  `nomFamille` int(11) NOT NULL,
   `nomPersonnage` varchar(50) DEFAULT NULL,
   `prenomPersonnage` varchar(50) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,

@@ -12,7 +12,7 @@ if(isset($_GET['delpost'])){
 } 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Admin</title>
@@ -43,7 +43,7 @@ if(isset($_GET['delpost'])){
 
 	<table>
 	<tr>
-		<th>Title</th>
+		<th>Titre</th>
 		<th>Date</th>
 		<th>Action</th>
 	</tr>
@@ -58,8 +58,8 @@ if(isset($_GET['delpost'])){
 				?>
 
 				<td>
-					<a href="edit_post.php?id=<?php echo $row['postID'];?>">Edit</a> | 
-					<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Delete</a>
+					<a href="edit_post.php?id=<?php echo $row['postID'];?>">Editer</a> | 
+					<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Suppression</a>
 				</td>
 				
 				<?php 
@@ -71,7 +71,7 @@ if(isset($_GET['delpost'])){
 	?>
 	</table>
 
-	<p><a href='add_post.php'>Add Post</a></p>
+	<p><a href='add_post.php'>Ajout Billet</a></p>
 
 </div>
 

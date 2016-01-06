@@ -46,7 +46,7 @@ if(isset($_GET['deluser'])){
 
 	<table>
 	<tr>
-		<th>Username</th>
+		<th>Pseudo</th>
 		<th>Email</th>
 		<th>Action</th>
 	</tr>
@@ -61,9 +61,9 @@ if(isset($_GET['deluser'])){
 				?>
 
 				<td>
-					<a href="edit_user.php?id=<?php echo $row['idUtilisateur'];?>">Edit</a> 
+					<a href="edit_user.php?id=<?php echo $row['idUtilisateur'];?>">Editer</a> 
 					<?php if($row['idUtilisateur'] != 1){?>
-						| <a href="javascript:deluser('<?php echo $row['idUtilisateur'];?>','<?php echo $row['pseudoUtilisateur'];?>')">Delete</a>
+						| <a href="javascript:deluser('<?php echo $row['idUtilisateur'];?>','<?php echo $row['pseudoUtilisateur'];?>')">Suppression</a>
 					<?php } ?>
 				</td>
 				
@@ -76,7 +76,7 @@ if(isset($_GET['deluser'])){
 	?>
 	</table>
 
-	<p><a href='add_user.php'>Add User</a></p>
+	<p><a href='add_user.php'>Ajout Utilisateur</a></p>
 
 </div>
 

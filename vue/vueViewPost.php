@@ -1,4 +1,4 @@
-<?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php'); 
+<?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php');?> 
 $stmt = $db->prepare('SELECT postID, postTitle, postCont,postImage, postDate FROM blog_posts WHERE postID = :postID');
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
@@ -20,6 +20,7 @@ if($row['postID'] == ''){
 
 	<div id="wrapper">
 <a href="vueLogout.php">Deconnexion</a>
+<?php if($_SESSION['username']=='admin') { echo '<a href="admin/vueAccueil.php">Menu Admin</a>';}?>
 		<h1>Blog</h1>
 		<hr />
 		<p><a href="./vueMemberPage.php">Accueil</a></p>

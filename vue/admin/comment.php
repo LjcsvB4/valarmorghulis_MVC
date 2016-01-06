@@ -65,7 +65,7 @@ if(isset($_GET['delcomment'])){
 
 				<td>
 					 
-					<a href="javascript:delpost('<?php echo $row['id'];?>','<?php echo $row['id_billet'];?>')">Delete</a>
+					<a href="javascript:delpost('<?php echo $row['id'];?>','<?php echo $row['id_billet'];?>')">Suppression</a>
 				</td>
 				
 				<?php 
