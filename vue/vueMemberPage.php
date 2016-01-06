@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
-<a href="vueLogout.php">Logout</a>
+<a href="vueLogout.php">Deconnexion</a>
 	<div id="wrapper">
 
 		<h1>Blog</h1>
@@ -24,13 +24,13 @@
 					
 					echo '<div>';
 						echo '<h1><a href="vueViewPost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h1>';
-						echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
+						echo '<p>Soumit le '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
 
 						echo '<p>'.$row['postDesc'].'</p>';
 
 echo "<p><img src='../style/images/".$row['postImage']."' alt=''></p>";		
 		
-						echo '<p><a href="vueViewPost.php?id='.$row['postID'].'">Read More</a></p>';				
+						echo '<p><a href="vueViewPost.php?id='.$row['postID'].'">Lire plus</a></p>';				
 					echo '</div>';
 				}
 			} catch(PDOException $e) {

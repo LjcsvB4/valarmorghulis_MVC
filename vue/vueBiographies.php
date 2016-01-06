@@ -1,7 +1,7 @@
 
 <div>
 		<a href="vueMemberPage.php">Retour à la page d'accueil</a>
-		<a href="vueLogout.php">Logout</a>
+		<a href="vueLogout.php">Deconnexion</a>
 	</div>	
 		<a href="vueBioLannister.php" ><img src="../style/images/BlasonLannister.png" alt="Lannister"/></a>
 		
