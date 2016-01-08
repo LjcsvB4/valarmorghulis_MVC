@@ -1,4 +1,4 @@
-<?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php');?> 
+<?php require($_SERVER['DOCUMENT_ROOT']. '/valarmorghulis_MVC/config/config.php');
 $stmt = $db->prepare('SELECT postID, postTitle, postCont,postImage, postDate FROM blog_posts WHERE postID = :postID');
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
